@@ -1,6 +1,6 @@
 url = "https://static.bc-edx.com/data/dl-1-2/m14/lms/starter/samples.json"
 
-function demongraphicInfo(TestSubject) {
+function demoInfo(TestSubject) {
 
     d3.json(url).then(function(samplesdata) {
 
@@ -21,7 +21,7 @@ function demongraphicInfo(TestSubject) {
 };
 
 //BAR CHART
-function barChart(TestSubject) {
+function barGraph(TestSubject) {
     d3.json(url).then(function(samplesdata) {
         let limit = 10; 
 
@@ -52,7 +52,7 @@ function barChart(TestSubject) {
 };
 
 //Bubble Graph
-function bubbleChart(TestSubject) {
+function bubbleGraph(TestSubject) {
     d3.json(url).then(function(samplesdata) {
 
         let TestSubjectInfo = samplesdata.samples.filter(results => results.id == TestSubject)[0];
@@ -100,18 +100,18 @@ function init(){
             dropdownMenu.append("option").text(element).property("value", element);
         });
 
-        barChart(firstId);
-        bubbleChart(firstId);
-        demongraphicInfo(firstId);
+        barGraph(firstId);
+        bubbleGraph(firstId);
+        demoInfo(firstId);
 
     });
 }
 
 function optionChanged(selection){
 
-    barChart(selection);
-    bubbleChart(selection);
-    demongraphicInfo(selection);
+    barGraph(selection);
+    bubbleGraph(selection);
+    demoInfo(selection);
 };
 
 init();
