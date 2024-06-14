@@ -20,7 +20,7 @@ function demoInfo(TestSubject) {
        
 };
 
-//BAR CHART
+//BARGRAPH
 function barGraph(TestSubject) {
     d3.json(url).then(function(samplesdata) {
         let limit = 10; 
